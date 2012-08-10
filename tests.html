@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Matchjs tests</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript" src="match.js"></script>
+		<script>
+			var sum = MATCH.func([
+				[["H|T"],function(H,T){
+					return H + sum(T);
+				}],
+				[[],function(){
+					return 0;
+				}]
+			])
+			console.log(sum([1,2,3]));
+		</script>
+	</body>
+</html>
