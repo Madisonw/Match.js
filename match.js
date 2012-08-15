@@ -32,8 +32,12 @@ MATCH = (function() {
 				return test_functions.is_object;	
 			}
 		},
-		string : test_functions.is_string,
-		number : test_functions.is_number
+		string : function(patt) { 
+			if (patt.length) return test_functions.is_nonempty_string;
+			if (!patt.length) return test_functions.is_empty_string;
+			return test_functions.is_string;
+		},
+		number : function() { return test_functions.is_number}
 	}
 	
 	function get_checker(pattern) {

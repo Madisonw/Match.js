@@ -15,7 +15,12 @@
 					return 0;
 				}]
 			])
-			console.log(sum([1,2,3]));
+
+			var concat = MATCH.func([
+				["str1","str2",function(str1,str2){
+					return str1 + str2;
+				}]
+			]);
 		</script>
 	</body>
 </html>
